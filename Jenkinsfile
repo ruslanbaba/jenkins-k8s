@@ -28,19 +28,6 @@ podTemplate(cloud: 'kubernetes', label: 'docker', yaml: template) {
        git branch: 'main', url: 'https://github.com/ruslanbaba/jenkins-k8s.git'
     }
 
-    stage ("Unit test") {
-      echo unit test
-    }
-
-    stage ("SonarQube test") {
-      echo SonarQube Test
-    }
-
-    stage("VeraCode Scan") {
-      echo VeraCode Scan
-    }
-
-
 
 withCredentials([usernamePassword(credentialsId: 'docker-creds', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
 
